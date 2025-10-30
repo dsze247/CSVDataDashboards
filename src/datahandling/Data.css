@@ -1,41 +1,42 @@
 th {
-    border: 1px solid rgb(132, 132, 132);
-    padding: 4px 8px;
-    text-align: center;
+  border: 1px solid rgb(132, 132, 132);
+  border-radius: 10px;
+  padding: 4px 8px;
+  text-align: center;
 }
 
 td {
-    padding: 4px 8px;
-    text-align: center;
+  padding: 4px 8px;
+  text-align: center;
 }
 
 .dataSection {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 20px;
 }
-  
+
 .dataTable {
-    flex: 1;
+  flex: 1;
 }
 
 .statistics {
-    flex: 0 0 200px;
-    padding: 12px 16px;
-    border-radius: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    background: white;
-    margin: 20px;
+  flex: 0 0 200px;
+  padding: 12px 16px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: white;
+  margin: 20px;
 }
 
 .value {
-    font-size: 20px;
-    margin: 0px;
-    margin-top: 8px;
+  font-size: 20px;
+  margin: 0px;
+  margin-top: 8px;
 }
 
 .label {
-    font-size: 15px;
-    margin: 0px;
+  font-size: 15px;
+  margin: 0px;
 }

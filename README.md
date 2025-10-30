@@ -108,6 +108,9 @@ After creating all the functional components, I then turned to styling the web p
 ![iteration 2](./process_pics/Screenshot%202025-10-30%20at%203.09.20 AM.png)
 *iteration 2*
 
+![final design](./process_pics/Screenshot%202025-10-30%20at%2010.41.43 AM.png)
+*final design*
+
 ## Stratagies
 When designing the webpage I often found myself using the inspect ability in my web browser to visualized the different components when tweaking the designs. For example when figuring out the best combination of margins and padding I would find the component in the inspect window and highlight the differentnt reigons.
 ![using the inspect tab for margins](./process_pics/Screenshot%202025-10-29%20at%208.39.47 PM.png)

@@ -1,6 +1,6 @@
-import { BarChart, LineChart } from '@mui/x-charts';
-import React, { useState } from 'react';
-import './DataVisualization.css';
+import { BarChart, LineChart } from "@mui/x-charts";
+import React, { useState } from "react";
+import "./DataVisualization.css";
 
 function DataVisualization(props) {
   const [checkboxStates, setCheckboxStates] = useState([true, true, true]);
@@ -25,10 +25,12 @@ function DataVisualization(props) {
     return acc;
   }, {});
 
-  const revenueByDate = props.data.reduce((acc, row) => {
+  const revenueByDate = props.data.reduce((acc, row, index) => {
     const date = row.date;
     const revenue = Number(row.revenue || 0);
-    acc[date] = (acc[date] || 0) + revenue;
+    const prevCumulativeRevenue =
+      index >= 1 ? Object.values(acc)[index - 1] : 0;
+    acc[date] = prevCumulativeRevenue + revenue;
     return acc;
   }, {});
 
@@ -37,7 +39,7 @@ function DataVisualization(props) {
   const quantity = Object.values(quantityByProduct);
 
   const dateLabels = Object.keys(revenueByDate).sort();
-  const revenueOT = dateLabels.map(date => Number(revenueByDate[date] || 0));
+  const revenueOT = dateLabels.map((date) => Number(revenueByDate[date] || 0));
 
   const activeCharts = checkboxStates.filter(Boolean).length;
   const chartHeight = activeCharts === 1 ? 500 : 250;
@@ -77,8 +79,8 @@ function DataVisualization(props) {
             {checkboxStates[0] && (
               <div className="chartBox">
                 <BarChart
-                  xAxis={[{ data: productLabels, label: 'Product' }]}
-                  series={[{ data: revenuesBP, label: 'Total Revenue ($)' }]}
+                  xAxis={[{ data: productLabels, label: "Product" }]}
+                  series={[{ data: revenuesBP, label: "Total Revenue ($)" }]}
                   height={chartHeight}
                 />
               </div>
@@ -87,8 +89,8 @@ function DataVisualization(props) {
             {checkboxStates[1] && (
               <div className="chartBox">
                 <BarChart
-                  xAxis={[{ data: productLabels, label: 'Product' }]}
-                  series={[{ data: quantity, label: 'Quantity Sold' }]}
+                  xAxis={[{ data: productLabels, label: "Product" }]}
+                  series={[{ data: quantity, label: "Quantity Sold" }]}
                   height={chartHeight}
                 />
               </div>
@@ -100,11 +102,11 @@ function DataVisualization(props) {
                   xAxis={[
                     {
                       data: dateLabels.map((date) => new Date(date)),
-                      label: 'Date',
-                      scaleType: 'time',
+                      label: "Date",
+                      scaleType: "time",
                     },
                   ]}
-                  series={[{ data: revenueOT, label: 'Revenue Over Time ($)' }]}
+                  series={[{ data: revenueOT, label: "Revenue Over Time ($)" }]}
                   height={chartHeight}
                 />
               </div>
