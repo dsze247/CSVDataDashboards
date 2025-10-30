@@ -108,7 +108,8 @@ After creating all the functional components, I then turned to styling the web p
 ![iteration 2](./process_pics/Screenshot%202025-10-30%20at%203.09.20 AM.png)
 *iteration 2*
 
-![final design](./process_pics/Screenshot%202025-10-30%20at%2010.41.43 AM.png)
+![final design](./process_pics/Screenshot%202025-10-30%20at%2011.49.00 AM.png)
+![final design](./process_pics/Screenshot%202025-10-30%20at%2011.57.17 AM.png)
 *final design*
 
 ## Stratagies
