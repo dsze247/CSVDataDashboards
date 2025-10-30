@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './DataVisualization.css';
 
 function DataVisualization(props) {
-  const [checkboxStates, setCheckboxStates] = useState([false, false, false]); // [Revenue, Quantity, Line]
+  const [checkboxStates, setCheckboxStates] = useState([true, true, true]);
 
   const handleCheckboxChange = (index) => {
     const newCheckboxStates = [...checkboxStates];
@@ -11,7 +11,6 @@ function DataVisualization(props) {
     setCheckboxStates(newCheckboxStates);
   };
 
-  // --- Data preparation ---
   const revenueByProduct = props.data.reduce((acc, row) => {
     const product = row.product;
     const revenue = Number(row.revenue || 0);
@@ -40,15 +39,13 @@ function DataVisualization(props) {
   const dateLabels = Object.keys(revenueByDate).sort();
   const revenueOT = dateLabels.map(date => Number(revenueByDate[date] || 0));
 
-  // --- Dynamically size charts ---
   const activeCharts = checkboxStates.filter(Boolean).length;
-  const chartHeight = activeCharts === 1 ? 400 : activeCharts === 2 ? 300 : 250;
+  const chartHeight = activeCharts === 1 ? 500 : 250;
 
   return (
     <div className="layout">
       {props.data.length > 0 && (
         <>
-          {/* Checkbox controls */}
           <div className="controls">
             <label className="viewOption">
               <input
@@ -76,7 +73,6 @@ function DataVisualization(props) {
             </label>
           </div>
 
-          {/* Chart area */}
           <div className={`charts charts-${activeCharts}`}>
             {checkboxStates[0] && (
               <div className="chartBox">
