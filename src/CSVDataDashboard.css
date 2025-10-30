@@ -14,3 +14,15 @@
   overflow: auto;
   border-radius: 20px;
 }
+
+.fileinput {
+  position: absolute;
+  left: 48%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  padding: 14px 10px 22px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background: white;
+  width: 400px;
+}

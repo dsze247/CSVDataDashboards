@@ -4,19 +4,16 @@ import { useState } from "react";
 import "./DataHalf.css";
 
 function DataHalf(props) {
-  const [parsedData, setParsedData] = useState([]);
-  const [dataColumns, setDataColumns] = useState([]);
-
-  const handleParsedData = (data) => {
-    setParsedData(data[0]);
-    setDataColumns(data[1]);
-    props.onValueChange([data[0], data[1]]);
+  const handleClearFile = (event) => {
+    props.onValueChange([[], []]);
   };
 
   return (
     <div className="dataHalf">
-      <FileParsing onValueChange={handleParsedData} />
-      <Data data={parsedData} columns={dataColumns} />
+      <button className="clearButton" type="button" onClick={handleClearFile}>
+        Clear File
+      </button>
+      <Data data={props.data} columns={props.columns} />
     </div>
   );
 }

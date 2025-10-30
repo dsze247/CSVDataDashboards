@@ -1,7 +1,8 @@
 import { useState } from "react";
 import DataHalf from "./DataHalf";
-import DataVisualization from "./DataVisualization";
+import DataVisualization from "./datahandling/DataVisualization";
 import "./CSVDataDashboard.css";
+import FileParsing from "./datahandling/FileParsing";
 
 function CSVDataDashboard() {
   const [parsedData, setParsedData] = useState([]);
@@ -15,10 +16,20 @@ function CSVDataDashboard() {
   return (
     <>
       <h1 className="appTitle">CSV Data Dashboard</h1>
-      <div className="dashboardBody">
-        <DataHalf onValueChange={handleParsedData} />
-        <DataVisualization data={parsedData} columns={dataColumns} />
-      </div>
+      {parsedData.length === 0 ? (
+        <div className="fileinput">
+          <FileParsing onValueChange={handleParsedData} />
+        </div>
+      ) : (
+        <div className="dashboardBody">
+          <DataHalf
+            onValueChange={handleParsedData}
+            data={parsedData}
+            columns={dataColumns}
+          />
+          <DataVisualization data={parsedData} columns={dataColumns} />
+        </div>
+      )}
     </>
   );
 }

@@ -3,7 +3,7 @@ import Papa from "papaparse";
 import "./FileParsing.css";
 
 function FileParsing(props) {
-  const [file, setFile] = useState(null); // the name of the current file I want to parse
+  const [file, setFile] = useState(""); // the name of the current file I want to parse
   const [uploadError, setUploadError] = useState(""); // if there is an uploading error, the error would be stored here
   const expectedColumns = ["date", "product", "quantity", "revenue"]; // the expected column values to compare to the passed in headers
 

@@ -16,7 +16,7 @@ For this project I broke the goal down into two parts, functionality and UI. Fro
 - Data Input
     - File chooser
     - Error handling
-    - Parsing buttoon
+    - Parsing button
 - Data Output
     - Data table
     - Basic statistics

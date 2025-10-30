@@ -16,12 +16,12 @@ function Data(props) {
   });
 
   const totRevenue = props.data.reduce(
-    (acc, currRow) => acc + Number(currRow.revenue || 0),
+    (acc, currRow) => acc + (Number(currRow.revenue || 0) || 0),
     0
   );
 
   const totQuantity = props.data.reduce(
-    (acc, currRow) => acc + Number(currRow.quantity || 0),
+    (acc, currRow) => acc + (Number(currRow.quantity || 0) || 0),
     0
   );
 
